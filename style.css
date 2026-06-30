@@ -331,3 +331,38 @@ body>main>article>div>header>aside>div{
     bottom: 0;
     left: 0;
 }
+/* --- DISEÑO RESPONSIVE (MÓVILES Y TABLETS) --- */
+@media (max-width: 960px) {
+    /* Cambiamos la fila a columna. Usamos column-reverse para que la vista previa 
+       quede arriba del todo en el móvil y los controles abajo */
+    #dashboard {
+        flex-direction: column-reverse;
+    }
+    
+    /* El panel de opciones pasa a ocupar el 100% del ancho */
+    #panel-settings {
+        width: 100%;
+        max-height: none;
+        overflow-y: visible;
+        padding: 1.5rem;
+    }
+    
+    #panel-preview {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    /* Quitamos el sticky para que fluya natural en móvil */
+    #sticky-preview {
+        position: relative;
+        top: 0;
+    }
+
+    /* Como las matemáticas del QR exigen píxeles fijos, le ponemos un scroll horizontal
+       suave solo a la caja de vista previa por si el móvil es extremadamente estrecho */
+    #preview-box {
+        padding: 1rem;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+}
