@@ -1,0 +1,333 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+#dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+#panel-settings {
+    width: 450px;
+    background-color: #ffffff;
+    padding: 2.5rem;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+h2 {
+    color: #17625b;
+    font-size: 1.8rem;
+}
+
+#subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+section {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.3rem;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+input[type="text"],
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    background-color: white;
+}
+
+/* Selector estructural para las filas de controles dentro de cada sección */
+section>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+input[type="color"] {
+    border: none;
+    width: 45px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: none;
+}
+
+/* Sliders */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: #e2e8f0;
+    height: 6px;
+    border-radius: 3px;
+    outline: none;
+    margin: 12px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #6B1756;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.25);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #6B1756;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.1s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.25);
+}
+
+#frame-hint {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+#label-thickness,
+#label-radius,
+#label-dots,
+#label-ext,
+#label-iext,
+#label-logo {
+    margin-top: 10px;
+}
+
+#panel-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+#sticky-preview {
+    position: sticky;
+    top: 3rem;
+    text-align: center;
+}
+
+body>main>article>div>header {
+    display: flex;
+    gap: 20px;
+}
+
+body>main>article>div>header>figure{
+    width: 50px;
+}
+body>main>article>div>header>figure>img{
+    width: 100%;
+}
+body>main>article>div>header>aside{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+body>main>article>div>header>aside>div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+#precision-container {
+    background-color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+#precision-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+#precision-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+#preview-box {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+#btn-download {
+    display: block;
+    width: 100%;
+    background-color: #6B1756
+;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#btn-download:hover {
+    background-color: #6B1756;
+}
+
+#qr-frame-container {
+    background-color: #ffffff;
+    display: inline-block;
+    padding: 35px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+#frame-corner-tl,
+#frame-corner-tr,
+#frame-corner-bl,
+#frame-corner-br {
+    position: absolute;
+    border-style: solid;
+    width: 45px;
+    height: 45px;
+    transition: all 0.1s ease;
+}
+
+#frame-corner-tl {
+    top: 0;
+    left: 0;
+    border-bottom: none;
+    border-right: none;
+}
+
+#frame-corner-tr {
+    top: 0;
+    right: 0;
+    border-bottom: none;
+    border-left: none;
+}
+
+#frame-corner-bl {
+    bottom: 0;
+    left: 0;
+    border-top: none;
+    border-right: none;
+}
+
+#frame-corner-br {
+    bottom: 0;
+    right: 0;
+    border-top: none;
+    border-left: none;
+}
+
+#qr-wrapper {
+    position: relative;
+    width: 297px;
+    height: 297px;
+    margin: 0 auto;
+}
+
+#qrcode canvas {
+    display: block;
+}
+
+#eye-tl-container,
+#eye-tr-container,
+#eye-bl-container {
+    position: absolute;
+    width: 63px;
+    height: 63px;
+    border: 9px solid #000000;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-radius 0.1s ease, border-color 0.2s;
+}
+
+/* El div interior del ojo referenciado por estructura directa */
+#eye-tl-container>div,
+#eye-tr-container>div,
+#eye-bl-container>div {
+    width: 27px;
+    height: 27px;
+    background-color: #000000;
+    transition: border-radius 0.1s ease, background-color 0.2s;
+}
+
+#eye-tl-container {
+    top: 0;
+    left: 0;
+}
+
+#eye-tr-container {
+    top: 0;
+    right: 0;
+}
+
+#eye-bl-container {
+    bottom: 0;
+    left: 0;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Yelose Tech QR Studio v4.0 - Customización Total</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main id="dashboard">
+        <aside id="panel-settings">
+
+
+            <section>
+                <h3>1. Contenido</h3>
+                <input type="text" id="qr-text"  placeholder="https://wwww.yelose.tech" oninput="actualizarTodo()">
+            </section>
+
+            <section>
+                <h3>2. Marco </h3>
+                <p id="frame-hint">Desliza al máximo para cerrar el marco por completo.</p>
+
+                <label>Extensión de los Bordes (Largo):</label>
+                <input type="range" id="frame-size" min="15" max="200" value="200" oninput="actualizarTodo()">
+
+                <label id="label-thickness">Grosor del Borde:</label>
+                <input type="range" id="frame-thickness" min="0" max="25" value="10" oninput="actualizarTodo()">
+
+                <label id="label-radius">Redondeo del Marco:</label>
+                <input type="range" id="frame-radius" min="0" max="50" value="20" oninput="actualizarTodo()">
+
+                <div>
+                    <label>Color del Marco:</label>
+                    <input type="color" id="frame-color" value="#000000" oninput="actualizarTodo()">
+                </div>
+            </section>
+
+            <section>
+                <h3>3. Patrón de Datos</h3>
+                <div>
+                    <label>Fondo general:</label>
+                    <input type="color" id="bg-color" value="#ffffff" oninput="actualizarTodo()">
+                </div>
+                <label id="label-dots">Forma de los Puntos:</label>
+                <select id="dots-type" onchange="actualizarTodo()">
+                    <option value="extra-rounded" selected>Extra Redondeado</option>
+                    <option value="rounded">Redondeado suave</option>
+                    <option value="dots">Puntos circulares</option>
+                    <option value="classy">Clásico moderno</option>
+                    <option value="square">Cuadrado clásico</option>
+                </select>
+                <div>
+                    <label>Color de Puntos:</label>
+                    <input type="color" id="dots-color" value="#000000" oninput="actualizarTodo()">
+                </div>
+            </section>
+
+            <section>
+                <h3>4. Ojo Exterior </h3>
+                <div>
+                    <label>Color Ojo Exterior:</label>
+                    <input type="color" id="corners-square-color" value="#000000" oninput="actualizarTodo()">
+                </div>
+
+                <label id="label-ext">Esquina Exterior (Hacia Fuera):</label>
+                <input type="range" id="eye-ext" min="0" max="30" value="30" oninput="actualizarTodo()">
+
+                <label>Esquina Interior (Hacia el Centro):</label>
+                <input type="range" id="eye-int" min="0" max="30" value="0" oninput="actualizarTodo()">
+
+                <label>Esquina Lateral Izquierda:</label>
+                <input type="range" id="eye-lata" min="0" max="30" value="30" oninput="actualizarTodo()">
+
+                <label>Esquina Lateral Derecha:</label>
+                <input type="range" id="eye-latb" min="0" max="30" value="30" oninput="actualizarTodo()">
+            </section>
+
+            <section>
+                <h3>5. Ojo Interior</h3>
+                <div>
+                    <label>Color Ojo Interior:</label>
+                    <input type="color" id="corners-dot-color" value="#000000" oninput="actualizarTodo()">
+                </div>
+
+                <label id="label-iext">Esquina Exterior Centro:</label>
+                <input type="range" id="inner-eye-ext" min="0" max="13" value="13" oninput="actualizarTodo()">
+
+                <label>Esquina Interior Centro:</label>
+                <input type="range" id="inner-eye-int" min="0" max="13" value="0" oninput="actualizarTodo()">
+
+                <label>Esquina Lateral Izquierda Centro:</label>
+                <input type="range" id="inner-eye-lata" min="0" max="13" value="13" oninput="actualizarTodo()">
+
+                <label>Esquina Lateral Derecha Centro:</label>
+                <input type="range" id="inner-eye-latb" min="0" max="13" value="13" oninput="actualizarTodo()">
+            </section>
+
+            <section>
+                <h3>6. Logotipo</h3>
+                <input type="file" id="logo-file" accept="image/*">
+                <label id="label-logo">Tamaño del Logo (Escala):</label>
+                <input type="range" id="logo-size" min="0.1" max="0.5" step="0.1" value="0.25"
+                    oninput="actualizarTodo()">
+            </section>
+        </aside>
+
+        <article id="panel-preview">
+
+            <div id="sticky-preview">
+                <header id="precision-container">
+                    <figure>
+                        <img src="favicon.svg" alt="Logo Yelose Tech">
+                    </figure>
+                    <aside>
+
+                            <h2>Yelose Tech QR Studio v4.0</h2>
+
+                        <div>
+                            <span id="precision-title">Fiabilidad de Escaneo:</span>
+                            <div id="precision-badge">Calculando...</div>
+                        </div>
+                    </aside>
+                </header>
+
+                <figure id="preview-box">
+                    <div id="qr-frame-container">
+                        <div id="frame-corner-tl"></div>
+                        <div id="frame-corner-tr"></div>
+                        <div id="frame-corner-bl"></div>
+                        <div id="frame-corner-br"></div>
+
+                        <div id="qr-wrapper">
+                            <div id="qrcode"></div>
+
+                            <div id="eye-tl-container">
+                                <div></div>
+                            </div>
+                            <div id="eye-tr-container">
+                                <div></div>
+                            </div>
+                            <div id="eye-bl-container">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <button id="btn-download" onclick="descargarQRCompleto()">Descargar QR (PNG)</button>
+            </div>
+        </article>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
